@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>INNOVA Services</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">▦</span><span>INNOVA <strong>Services</strong></span></div>
+    <div class="status"><span class="dot"></span><span id="statusText">Servicios en línea</span></div>
+  </header>
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">ARQUITECTURA ORIENTADA A SERVICIOS</p>
+        <h1>Servicios inmobiliarios conectados por una API REST.</h1>
+        <p>INNOVA Services separa responsabilidades en módulos para propiedades, citas, perfiles y negociación.</p>
+      </div>
+      <div class="hero-box">
+        <span>API</span>
+        <strong>/api</strong>
+        <small>FastAPI + SQLite</small>
+      </div>
+    </section>
+
+    <section class="service-grid">
+      <article><div class="icon">⌂</div><h3>Property Service</h3><p>Consulta, filtra y registra propiedades.</p><code>GET /api/properties</code></article>
+      <article><div class="icon">◷</div><h3>Appointment Service</h3><p>Gestiona solicitudes y horarios de visita.</p><code>POST /api/appointments</code></article>
+      <article><div class="icon">$</div><h3>Negotiation Service</h3><p>Registra ofertas y estados de negociación.</p><code>POST /api/offers</code></article>
+      <article><div class="icon">◎</div><h3>Profile Service</h3><p>Expone perfiles y reputación de vendedores.</p><code>GET /api/sellers</code></article>
+    </section>
+
+    <section class="panel-grid">
+      <div class="panel wide">
+        <div class="panel-head"><div><span class="mini">PROPERTY SERVICE</span><h2>Propiedades disponibles</h2></div><button id="reload">Actualizar</button></div>
+        <div id="properties" class="property-list"></div>
+      </div>
+      <div class="panel">
+        <span class="mini">APPOINTMENT SERVICE</span>
+        <h2>Próximas citas</h2>
+        <div id="appointments" class="timeline"></div>
+      </div>
+    </section>
+
+    <section class="endpoint-panel">
+      <div>
+        <span class="mini">FLUJO DE CONSUMO</span>
+        <h2>Un cliente solicita un recurso y cada servicio responde mediante HTTP/JSON.</h2>
+      </div>
+      <div class="flow"><span>Cliente</span><b>→</b><span>API REST</span><b>→</b><span>Servicio</span><b>→</b><span>SQLite</span><b>→</b><span>JSON</span></div>
+    </section>
+  </main>
+<script src="/static/app.js"></script>
+</body>
+</html>
